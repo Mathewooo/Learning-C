@@ -7,7 +7,7 @@ typedef enum {
 
 int main(void) {
     THRUST_LEVELS thrusts[4] = {NONE, MAXIMUM, MEDIUM, LOW};
-    for (int8_t index = 0; index < 4; index++) {
+    for (int index = 0; index < 4; index++) {
         const char *str;
         switch (thrusts[index]) {
             case NONE:
