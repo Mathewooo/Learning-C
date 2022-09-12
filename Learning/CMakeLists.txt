@@ -3,4 +3,4 @@ project(Learning C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Learning challenges/sigma_drawing.c)
+add_executable(Learning challenges/prime_numbers.c)
