@@ -4,8 +4,8 @@
 const int data = 0xABCD;
 
 typedef struct {
-    int n;
-    int m;
+    uint8_t n;
+    uint8_t m;
 } Tuple;
 
 const Tuple arrayOfSelections[] = {
@@ -23,7 +23,9 @@ void displaySelectedBits(uint8_t n, uint8_t m) {
 }
 
 int main(void) {
-    const int size = sizeof arrayOfSelections / sizeof *arrayOfSelections; //First you need to determine the size of the array. Then you need to divide it by the size of one element. It works because every item in the array has the same type, and as such the same size.
+    const int size = sizeof arrayOfSelections / sizeof *arrayOfSelections; //First you need to determine the size of the array.
+    // Then you need to divide it by the size of one element.
+    // It works because every item in the array has the same type, and as such the same size.
     for (int index = 0; index < size; index++) {
         const Tuple tuple = arrayOfSelections[index];
         displaySelectedBits(tuple.n, tuple.m);

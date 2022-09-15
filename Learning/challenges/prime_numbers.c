@@ -20,7 +20,7 @@ int main(void) {
 
     if (!(lower > 1 && upper < MAX)) goto error;
     else {
-        for (int index = upper; index < MAX; index++)
+        for (int index = lower; index < MAX; index++)
             if (is_prime(index)) {
                 printf("\nFirst prime number above lower limit is:\n %d\n", index);
                 break;
@@ -40,4 +40,3 @@ int main(void) {
     printf("\n!ERROR!\n");
     return EXIT_FAILURE;
 }
-
