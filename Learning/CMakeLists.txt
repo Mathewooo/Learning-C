@@ -3,4 +3,4 @@ project(Learning C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Learning pointers/functions_and_pointers.c)
+add_executable(Learning challenges/float_decomposition.c)
