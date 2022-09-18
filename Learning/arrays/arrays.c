@@ -1,31 +1,34 @@
 #include <stdio.h>
-#include "dynamic_array.h"
+#include "array_list.h"
 
 #define MIN 5
 #define MAX (MIN * 100)
+
+void mainLoop(ArrayList *arr);
 
 void printExpenses(const ArrayList *arr);
 
 int main(void) {
     ArrayList expenses;
     initArray(&expenses, MIN);
+    mainLoop(&expenses);
+    freeArray(&expenses);
+    return 0;
+}
 
+void mainLoop(ArrayList *arr) {
     for (int i = 0; i < MAX; i++) {
         float currentValue;
-        printf("Please enter your expense (Or enter 0 to exit and output your expenses): ");
+        if (i < MIN) printf("Please enter at least %d more expense/s: ", MIN - i);
+        else if (i >= MIN) printf("Enter your expense (Or enter 0 to exit and output your expenses): ");
         scanf("%f", &currentValue);
         if (currentValue == 0 && i < MIN) {
-            printf("Enter at least %d more expense/s - ", MIN - i);
             i--;
             continue;
-        } else if (currentValue == 0) break;
-        insertElement(&expenses, currentValue);
+        } else if (currentValue == 0 && i >= MIN) break;
+        insertElement(arr, currentValue);
     }
-
-    printExpenses(&expenses);
-    freeArray(&expenses);
-
-    return 0;
+    printExpenses(arr);
 }
 
 void padding(int both) {
