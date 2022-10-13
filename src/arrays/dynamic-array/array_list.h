@@ -19,7 +19,10 @@ void initArray(ArrayList *array, size_t initialSize) {
 
 void insertElement(ArrayList *array, float element) {
     if (array->used == array->size)
-        array->array = realloc(array->array, (array->size *= FLOAT_SIZE) * FLOAT_SIZE);
+        array->array = realloc(
+                array->array,
+                (array->size *= FLOAT_SIZE) * FLOAT_SIZE
+                );
     array->array[array->used++] = element;
 }
 

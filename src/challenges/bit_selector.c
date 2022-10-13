@@ -16,8 +16,8 @@ const Tuple arrayOfSelections[] = {
 };
 
 void displaySelectedBits(uint8_t n, uint8_t m) {
-    unsigned w = m - n + 1; //At this example width of bitmask is always '4'
-    unsigned bitmask = (1 << w) - 1; //Here bitmask is always '0x000F' (again only in this example)
+    unsigned w = m - n + 1; // At this example width of bitmask is always '4'
+    unsigned bitmask = (1 << w) - 1; // Here bitmask is always '0x000F' (again only in this example)
     unsigned result = (data >> n) & bitmask;
     printf("result --> 0x%04X\n", result);
 }
